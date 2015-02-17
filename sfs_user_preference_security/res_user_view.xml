@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="sfs_view_res_user_view_inherit" model="ir.ui.view">
+            <field name="name">res.users.preferences.form.inherit</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="sale_crm.view_users_form_preferences"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='lang']" position="attributes">
+                    <attribute name="readonly">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='tz']" position="attributes">
+                    <attribute name="readonly">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='email']" position="attributes">
+                    <attribute name="readonly">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='signature']" position="attributes">
+                    <attribute name="readonly">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='default_section_id']" position="attributes">
+                    <attribute name="readonly">True</attribute>
+                </xpath>
+            </field>
+        </record>
+        
+        <record id="sfs_view_res_user_view_inherit_group" model="ir.ui.view">
+            <field name="name">res.users.preferences.form.inherit.group</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="sfs_view_res_user_view_inherit"/>
+            <field name="groups_id" eval="[(6, 0, [ref('group_user_pref_edit')])]"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='lang']" position="attributes">
+                    <attribute name="readonly">False</attribute>
+                </xpath>
+                <xpath expr="//field[@name='tz']" position="attributes">
+                    <attribute name="readonly">False</attribute>
+                </xpath>
+                <xpath expr="//field[@name='email']" position="attributes">
+                    <attribute name="readonly">False</attribute>
+                </xpath>
+                <xpath expr="//field[@name='signature']" position="attributes">
+                    <attribute name="readonly">False</attribute>
+                </xpath>
+                <xpath expr="//field[@name='default_section_id']" position="attributes">
+                    <attribute name="readonly">False</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

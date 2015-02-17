@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+    	 <record model="ir.ui.view" id="crm_case_form_view_oppor_inh">
+            <field name="name">crm.lead.inh</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//page[@string='Lead']" position="after">
+            		<page string="Meetings">
+						<separator colspan="4" string="Meetings to be held and their Timings"/>
+						<group colspan="4">
+							<field name="meeting_ids" nolabel="1"></field>
+            			</group>
+            		</page>
+            	</xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
